@@ -16,7 +16,7 @@ url = "https://jeking598.s3.us-east-2.amazonaws.com/movies.csv"
 # Fetch the data from the URL
 r = requests.get(url)
 movies = pd.read_csv(io.StringIO(r.text))
-
+movies = movies.rename(columns={'name': 'title'})
 genres = UNIQUE_GENRES
 
 def get_displayed_movies():
